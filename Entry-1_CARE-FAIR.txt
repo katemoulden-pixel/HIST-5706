@@ -1,0 +1,63 @@
+
+[[CARE]]
+- This can be used in my work with the museum. As I am creating the collections policy I need to keep this in mind.
+- The data I am gathering for the museum is going to be shared with the community and reflect their thoughts and processes. 
+- I am going to try to do more of it within the context of UNDRIP and CARE
+
+Collective Benefit
+Authority to Control
+Responsibility
+Ethics
+
+[[Big Ideas/Collective Benefit]] = Designed and function in a way that enables Indigenous Peoples to derive benefit from the data
+- Inclusive development and innovation- supports use and reuse of data by Indig nations and communities with promotion of self-determined development process
+- For improved governance and citizen engagement - helps provide a better understanding of the self
+- Equitable outcomes- grounded in community values and contribute to aspirations for well being
+
+[[Big Ideas/Authority to Control]] = people have authority to control the data and be empowered to determine how Indigenous Peoples, lands, territories, research, knowledge and geographical indicators are represented and identified within data
+- Recognise rights and interests- right to free prior and informed consent of collection and use of data and development of data policies and protocols for collection
+- Data for governance- right to data that is relevant to their world views and empower self determination and self governance. make it [[Big Ideas/Accessible]]
+- Governance of Data- right to develop cultural governance protocols and be active leaders in stewardship and access esp. related to Indig. knowledge
+
+[[Big Ideas/Responsibility]]= Responsibility to share how data are used to support Indigenous Peoples’ self determination and collective benefit. Accountability requires meaningful and openly available evidence of these efforts and the benefits accruing to Indigenous Peoples.
+- Positive relationships- you need relationships built on trust, respect, reciprocity, and mutual understanding as defined by the Indigenous Peoples you are working with. Ensure creation, interpretation and use is upheld or respectful of dignity of Indig. nations and communities
+- Expanding capability and capacity- use the data as a way to enhance data literacy and support Indigenous workforce and digital infrastructure that enable data to be collected created managed secured governed and applied
+- For Indigenous languages and worldviews- Resources must be provided to generate data grounded in the languages, worldviews, and lived experiences (including values and principles) of Indig. peoples
+
+[[Big Ideas/Ethics]]= Indigenous Peoples rights and well-being should be the primary concern at all stages of the data life cycle and across the data ecosystem.
+- For minimizing harm and maximizing benefit- Ethical data are data that do not stigmatize or portray Indig. peoples, cultures or knowledges in terms of deficit. Ethical data is collected in a way that aligns with Indig. ethical framework and and is affirmed by UNDRIP. Assessing ethical benefits should be done from the perspective of the Indigenous Peoples, nations or communities to whom the data relate.
+- For justice- Ethical processes address imbalance in power, resources and how these affect the expression of Indigenous and human rights. Ethical processes must include representation from relevant Indigenous communities. 
+- For future use- Take into account future use and harm and be grounded in values and principles of the relevant Indigenous community. Metadata should acknowledge the provenance and purpose and any limitations or obligations in secondary use inclusive of issues of consent.
+
+
+[[FAIR]]
+- Slightly less applicable to my project but still important
+
+Findable
+Accessible
+Interoperable
+Reusable
+
+[[Findable]] = Make your data and metadata easy to read. 
+- data has globally unique and persistan identifer
+- rich metadata
+- metadata clearly and explicitly includes identifier of data they describe
+- metadata are registered or indexed in a searchable resource
+
+[[Accessible]] = know how the data can be accessed including authentication adn authorisation
+- retrievable by identifier using standardised communications protocol
+- protocol is open, free and universally implementable
+- protocol allows for an authentication and authorisation when necessary
+- metadata is accessible when data is no longer available
+- protocol = mechanism for how digital resource is accessed like HTTP
+
+[[Interoperable]] = data needs to be integrated with other data and needs to be interoperate with applications or workflows for analysis, storage and processing
+- data use formal accessible shared and broadly applicable language for knowledge representation
+- use vocabularies that follow FAIR principles-  sufficiently distingushable by machine to resolve intended defined meaning and insure detection and prevention of false agreements and false disagreements
+- metadata include qualified references to other metadata
+
+[[Reusable]] = metadata is well described so that it can be replicated or combined in different settings.
+- metadata are richly described with a plurality of accurate and relevant attributes
+- data are released with a clear and accessible data usage license
+- metadata are associated with detailed provenance
+- meet domain-relevant community standards 
