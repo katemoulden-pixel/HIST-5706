@@ -1,0 +1,189 @@
+I don't understand what I am supposed to be doing. This is a whole new language for me and it makes me want to cry. 
+
+Here are some basic things I need to know:
+
+"#" is an instruction. it is not read as code
+To create a variable use (x = y)
+ex. author = "John Green"
+## The [[Four Core Types]]
+
+To process humanities data correctly, Python needs to know what _kind_ of data it is dealing with.
+
+1. -**String (`str`)**: Text data, always wrapped in quotes.
+    
+    - -Example: `author = "Toni Morrison"`
+    
+2. -**Integer (`int`)**: Whole numbers (no decimals).
+    
+    - -Example: `publication_year = 1987`
+    
+3. -**Float (`float`)**: Decimal numbers. Useful for statistics or coordinates.
+    
+    - -Example: `average_sentence_length = 15.4`
+    
+4. -**Boolean (`bool`)**: Logical values. Either `True` or `False` (note the capital letters).
+    
+    - -Example: `is_digitized = True`
+
+#### Lists vs Dictionaries
+A List is an ordered collection of items. For example a list of authors
+
+- Syntax uses square brackets []
+- Ordering: Items stay in the order you put them in
+- Indexing: Python starts counting at 0.
+len() is short for length
+
+[[Definitions/Dictionary]] (Key-Value Pairs)
+a dictionary is an unordered collection of "labels" (keys) and "data" (values". This is the perfect format  for metadata)
+- Syntax: uses curly braces {}
+- Structure: "Key": Value
+- Access: You don't use a number to get data; you use the key
+
+Use a [[List]] if you have a simple sequence of items where the order matters (like chapters in a book).
+Use a [[Dictionary]] if you need to label your data (like a library catalog record)
+
+Both [[List]] and [[Disctionary]] are [[Mutable]] meaning you can change them after they are created. You can up date the publication year or list a new author
+
+**Control Flow: Logic and Loops**
+
+1. Conditionals (if, elif, else) 
+	1. Comparison Operators:
+		a.  == (Equal to)
+		b. != (Not equal to)
+		c. > (Greater than)
+		d. <(Less than)
+	ex: year = 1850
+
+		if year < 1800:
+	    print("This is an early modern text.")
+		elif year < 1900:
+	    print("This is a 19th-century text.")
+		else:
+	    print("This is a modern text.")
+2. For Loops
+	1. a "for" loop tells Python to take a collection (like a list) and perform the same action for **every item** in that collection
+	2. ex. corpus = ["Hollywood, Ending", "Paper Towns", "Turtles All the Way Down"]
+	3. #'book' is a temporary name we give to the current item
+		1. code: *for* book in corpus: 
+		2. print("Analyzing" + book)
+3. The Golden Rule: Indentation
+	1. Many languages use {} to group code. Python uses [[indentation]] (usually 4 spaces or one tab)
+	2. anything indented under an *if* or *for* statement is considered "inside" the block. When you stop indenting the block ends.
+		1. ex. *for* book in corpus:
+			1. print (book) # This is INSIDE the loop and runs 3 times.
+			print ("Done!") # This is OUTSIDE and runs only once at the end.
+4. Combining the Two (Filtering)
+	a very common DH task is to loop through a list and only print items that meet a certain requirement. This is called **filtering**
+	
+#### [[Functions]]
+
+Functions = Custom Tools
+fnction = reusable "recipe" that you write once and clal whenever you need it
+
+1. Anatomy of a function
+	1. To create a function we use *def* keyword (short for define).
+2. Inputs and Outputs: Parameters vs. Return
+
+Think of a function like a specialized machine in a library:
+
+- -**Parameters (Inputs)**: The raw materials you put into the machine.
+- -**Return (Output)**: The finished product the machine hands back to you.
+
+**Print vs. Return**:
+
+- -`print()` just shows a value on your screen. It’s like looking at a book.
+- -`return` hands the value back to the program so you can use it later. **If a function doesn't have a `return`, it won't give you any data back to store in a variable!**
+
+## 3. A Handy DH Tool: `.split()`
+
+In the challenge in the sandbox, you need to count words. In Python, you can turn a long string of text into a **List of words** using the `.split()` method.
+
+## Why Use Functions in Research?
+
+1. -**Readability**: Your code looks like a series of logical steps (`clean_text()`, then `count_words()`).
+2. -**Maintenance**: If you decide to change how you count words, you only have to fix it in one place (the function definition).
+3. -**Collaboration**: You can write a complex function for "Parsing 18th Century Dates" and share it with other historians.
+NOTE: [def] blocks are always at the top of a file
+
+My trial after lots of faffing around:
+# Write a function 'reading_time' that takes a text string
+# and returns the estimated reading time in minutes.
+
+def reading_time(text):
+    words = text.split()
+    word_count = len(words)
+    minutes = word_count / 200
+    return minutes
+
+    # 1. Split the text into a list of words
+    # 2. Count how many words are in that list using len()
+    # 3. Calculate minutes (assume 200 words per minute)
+    # 4. Return the result
+    pass
+
+# Test your function
+
+sample_text = "I was reminded that the world is what it is, but the world is also what you bring to it. And who you share it with. Hank, I'll see you on Friday." * 200
+
+result = reading_time(sample_text)
+print(result)
+
+31.005
+
+# Reading and Writing Files
+
+The power of Digital Humanities comes from moving beyond the screen. We need to be able to pull in a collection of texts (Reading) and save our analysis results (Writing).
+
+---
+
+## 1. The "With" Statement (Context Managers)
+
+In Python, the safest way to handle a file is with the `with` keyword. It creates a temporary "bridge" to the file. Once the code inside the block is finished, Python automatically "closes" the bridge.
+
+```
+# Open for reading ('r')
+with open('diary.txt', 'r', encoding='utf-8') as f:
+    text = f.read()
+    # After this line, the file is automatically closed!
+```
+
+---
+
+## 2. Modes: Read vs. Write
+
+When you open a file, you must tell Python what you intend to do with it.
+
+|Mode|Name|Action|
+|---|---|---|
+|**'r'**|Read|Opens a file for reading. (Throws an error if the file doesn't exist).|
+|**'w'**|Write|Creates a new file or **overwrites** an existing one completely!|
+|**'a'**|Append|Adds new text to the end of an existing file without deleting it.|
+
+---
+
+## 3. Formatting with Newlines
+
+Computers don't see the "Enter" key like we do. To tell Python to move to a new line in a file, we use the **newline character**: `\n`.
+
+```
+# Writing two lines to a file
+with open('output.txt', 'w', encoding='utf-8') as f:
+    f.write("First Line of Analysis\nSecond Line of Analysis")
+```
+
+---
+
+## 4. Why Encoding Matters (Again!)
+
+As a DH researcher, you will often work with historical texts or data from international archives. Always include `encoding='utf-8'`. If you leave it out, your script might work on your computer but break on a colleague's machine, or it might turn accented characters into "mojibake."
+
+**The 'w' Mode Danger**: Be careful! Opening a file with `'w'` wipes it clean immediately. Never use `'w'` on your only copy of a primary source!
+
+In the challenge in the sandbox, you will perform two steps. First, you will "Save" some data to a file. Then, in a second block, you will "Open" it back up to prove it was saved correctly.
+
+**Result of Reading and Writing Files**
+
+"With" would not work even when I tried with a text file I created in my downloads. 
+I have no idea how to fix this. 
+
+Overall I *maybe* understand coding a bit better. I did have a good cry yesterday which helped.
