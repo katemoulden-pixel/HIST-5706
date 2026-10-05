@@ -1,0 +1,286 @@
+I was listening to a song by Tessa Violet called "I Love Being Wrong" and I think it is really going to help me get through this class. https://www.youtube.com/watch?v=Cm8ur04E9cY
+
+I grew up being told how to do something and that if I didn't get it right on the first try then there was judgement. Try solving a problem and once you find a solution that works for the most part but maybe not perfectly being told "well why didn't you think of this?" That comes into the crux of my fears surrounding coding. I am afraid of judgement. Though my wise adult self does not believe that my classmates nor you, Shawn, as the professor will judge me. It is the part of me that is a scared little girl that comes out and fears that getting things wrong will mean a decrease in love shown. Or respect, or value within myself. 
+
+Learning to code is not a test of my intelligence or my ability to understand but a new way of looking at the world. I need to think of it like building a music score or beaded earrings. It is all different colours that work together in one way to make something and I just need to find the right way. I am working on loving being wrong. It will take a lot of patience and practice and messing up and that is okay. I think this is a class I need to push myself and grow as a person. 
+
+So with that being said here are some notes of what I need to know to run python and use Powershell.
+
+From PDQ website: https://www.pdq.com/powershell/
+
+Get-Content aka. cat, gc, type = Gets the contents of a file
+Get-Date = Gets current date and time
+Copy-Item copy cp, cpi- Copies an item from one location to another
+Out-File = sends output to a file
+Where-Object aka, ?, where = Selects objects from a collection based on their property values
+Import-Csv aka ipcsv = Creates table-like custom objects from the items in a CSV file
+Select-String aka sls = Finds text in strings and files
+Select-Object aka select = Selects objects or object properties
+Test-Path = Determines whether all elements of a file or directory path exist.
+ForEach-Object aka %, foreach = Performs an operation against each item in a collection of input objects.
+New-Item aka ni = Creates a new item
+Add-Content aka ac = Appends content. such as words or data to a file
+Get-Item aka gi = Gets files and folders
+Compare-Object  aka compare,diff Compares two sets of objects
+Sort-Object sort = Sorts objects by property values.
+Get-ItemProperty gp = Gets the properties of a specified item
+Measure-Object measure Calcualtes the numeric properties of objects, and the characters, words, and lines in a string such as files of text
+Split-Path treturns the specified part of a path
+Set-Location cd, chdir, ls, Sets the current working location to a specific location
+Get-Command gcm Gets all commands
+Join-Path = Combines a path and child path to a single path
+ConverTo-Json Convers an object to a JSON-formatted strong
+Set-Variable set sv- Sets the value of a variable. Creates the variable if one with the requested name does not exist.
+Group-Object group= Groups objects that contain the same value for specified properties.
+Get-History ghy, h, history = Gets a list of the commands entered during the current session
+New-Variable nv =creates new variable
+
+This website might also be helpful https://devblogs.microsoft.com/scripting/table-of-basic-powershell-commands/
+
+Time to try to solve a murder
+
+Hint one asks to use Head which in command
+
+head -n 20 people which in the case of Power Shell is Get-Content "people" -Head 20 - Get-Content "name of file" -Head # lets you look at the top few lines of a file
+
+To go to the street someone lives on use the file for the street name in the streets subdirectory. to knock on their door and investigae read the line number they live on from the file. If a line looks like gibberish you're at the wrong house
+
+I cannot figure out how to knock on the door
+
+Clues from Crime scene
+crimescene:9213:CLUE: Footage from an ATM security camera is
+blurry but shows that the perpetrator is a tall male, at least 6'.
+crimescene:9370:CLUE: Found a wallet believed to belong to the
+killer: no ID, just loose change, and membership cards for AAA,
+Delta SkyMiles, the local library, and the Museum of Bash History.
+The cards are totally untraceable and have no name, for some
+reason.
+crimescene:11002:CLUE: Questioned the barista at the local coffee
+shop. He said a woman left right before they heard the shots. The
+name on her latte was Annabel, she had blond spiky hair and a New
+Zealand accent.
+
+2 people perp is tall male at least 6ft and has membership for AAA, DeltaSkyMiles, library and Museum of Bash History
+
+Need to find Barista and Annabel with the New Zealand accent
+
+Did Select-String "Annabel" people
+people:278:Annabel Sun  F       26      Hart Place, line 40
+people:1395:Oluwasegun Annabel  M       37      Mattapan Street, line 173
+people:1670:Annabel Church      F       38      Buckingham Place, line 179
+people:1760:Annabel Fuglsang    M       40      Haley Street, line 176
+
+hint 3 use head in people and vehicles
+
+Get-Content "people" / "vehicles" -Head 20
+
+Select-String "Annabel" vehicles
+
+vehicles:19741:Owner: Oluwasegun Annabel
+vehicles:22681:Owner: Annabel Church
+vehicles:22737:Owner: Annabel Sun
+vehicles:23367:Owner: Annabel Fuglsang
+
+SEE INTERVIEW #699607 Annabel Church
+
+cat "Buckinham_Place" -Head 179
+
+ cat "interview-699607"
+Interviewed Ms. Church at 2:04 pm.  Witness stated that she did not see anyone she could identify as the shooter, that she ran away as soon as the shots were fired.
+
+However, she reports seeing the car that fled the scene.  Describes it as a blue Honda, with a license plate that starts with "L337" and ends with "9"
+
+ Select-String "L337" vehicles
+
+vehicles:866:License Plate L337ZR9
+vehicles:2168:License Plate L337P89
+vehicles:5458:License Plate L337GX9
+vehicles:7166:License Plate L337QE9
+vehicles:13564:License Plate L337GB9
+vehicles:13655:License Plate L337OI9
+vehicles:15923:License Plate L337X19
+vehicles:17743:License Plate L33753
+vehicles:22083:License Plate L3373U9
+vehicles:23826:License Plate L337369
+vehicles:24834:License Plate L337DV9
+vehicles:31827:License Plate L3375A9
+vehicles:34312:License Plate L337WR9
+
+https://stackoverflow.com/questions/73570638/powershell-capture-and-display-previous-line-when-string-match-true https://stackoverflow.com/questions/30603609/show-the-previous-and-after-n-lines-each-for-the-matched-lines
+
+PS C:\Users\katem\Downloads\clmystery-master\clmystery-master\mystery> Select-String -Pattern "Blue" -Path .\vehicles -Context 6
+
+Suspects
+ vehicles:34312:License Plate L337WR9
+  vehicles:34313:Make: Honda
+  vehicles:34314:Color: Blue
+  vehicles:34315:Owner: Jacqui Maher
+  vehicles:34316:Height: 6'2"
+  vehicles:34317:Weight: 130 lbs
+Select string 'Jacqui Maher" people - is female. Not the suspect'
+  
+> vehicles:31827:License Plate L3375A9
+  vehicles:31828:Make: Honda
+  vehicles:31829:Color: Blue
+  vehicles:31830:Owner: Jeremy Bowers
+  vehicles:31831:Height: 6'1"
+  vehicles:31832:Weight: 204 lbs
+  
+Dunstable Road line 284
+SEE INTERVIEW #9620713
+
+in interviews folder "cat "interview-9620713"
+
+Home appears to be empty, no answer at the door.
+
+After questioning neighbors, appears that the occupant may have left for a trip recently.
+
+Considered a suspect until proven otherwise, but would have to eliminate other suspects to confirm.
+
+  vehicles:24834:License Plate L337DV9
+  vehicles:24835:Make: Honda
+  vehicles:24836:Color: Blue
+  vehicles:24837:Owner: Joe Germuska
+  vehicles:24838:Height: 6'2"
+  vehicles:24839:Weight: 164 lbs
+  
+Plainfield Street line 275
+
+SEE INTERVIEW #29741223
+
+Should not be considered a suspect, has no SkyMiles membership and has never been a member of the Museum of Bash History.
+
+Therefore we need to confirm if Jeremy Bowers has memberships in the places
+
+Select-String "Jeremy Bowers" under each membership
+AAA- yes
+Delta SkyMiles- yes
+the local library - yes
+ Museum of Bash History - yes
+
+
+Trying alternative suggested by hint 8
+To see who was a member of several different groups, you can combine their membership lists into one and search against that. 
+
+        cat Fitness_Galaxy AAA United_MileagePlus | grep "John Smith"
+
+If you only want to see the number of matches, you can use grep's -c option (the c must be lowercase):
+
+        cat Fitness_Galaxy AAA United_MileagePlus | grep -c "John Smith"
+
+Or you can pipe the result to 'wc -l':
+
+        cat Fitness_Galaxy AAA United_MileagePlus | grep "John Smith
+
+Cannot find a way to look at multiple at once
+
+memberships> cat AAA Delta_SkyMiles Terminal_City_Library Museum_of_Bash_History | Select-String "Jeremy Bowers"
+Get-Content: A positional parameter cannot be found that accepts argument 'Delta_SkyMiles'.
+
+Checking my solution
+Checking Your Answer on Mac/Linux:
+
+  Copy and paste the following command, replace John Doe with the suspect's name you want to check, and execute it from inside the main clmystery directory:
+
+  echo "John Doe" | $(command -v md5 || command -v md5sum) | grep -qif /dev/stdin encoded && echo CORRECT\! GREAT WORK, GUMSHOE. || echo SORRY, TRY AGAIN.
+
+Checking Your Answer on Windows:
+
+  Copy and paste the following command, replace John Doe with the suspect's name you want to check, and execute it from inside the main clmystery directory:
+
+  echo "John Doe" | $(command -v md5 || command -v md5sum)
+
+  This will give you a long code of numbers and letters. Copy and paste the following command, replace My Code with the code you got, and execute it:
+
+  grep -qi "My Code" encoded && echo CORRECT\! GREAT WORK, GUMSHOE. || echo SORRY, TRY AGAIN.
+
+Seeing The Answer:
+
+  To give up and view the correct answer, copy and paste the following command and execute it from inside the main clmystery directory:
+
+  echo " " && sed -n '/Z/p' encoded | tail -n 6 | cut -c 8,22,23,41 && echo " "
+
+ITs not working. Echo is Write-Output for powershell and it keeps telling me that the "Expressions are only allowed as the first element of a pipeline" 
+
+"PS C:\Users\katem\Downloads\clmystery-master\clmystery-master> echo "Jeremy Bowers" | $(command -v md5 || command -v md5sum)
+ParserError:
+Line |
+   1 |  echo "Jeremy Bowers" | $(command -v md5 || command -v md5sum)
+     |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Expressions are only allowed as the first element of a
+     | pipeline.
+PS C:\Users\katem\Downloads\clmystery-master\clmystery-master> Write-Output "Jeremy Bowers" | $(command -v md5 || command -v md5sum)
+ParserError:
+Line |
+   1 |  Write-Output "Jeremy Bowers" | $(command -v md5 || command -v md5sum)
+     |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Expressions are only allowed as the first element of a
+     | pipeline.
+PS C:\Users\katem\Downloads\clmystery-master\clmystery-master> Write-Output "Jeremy Bowers" | ${command -v md5 || command -v md5sum)
+>> cd..
+>> Write-Output "Jeremy Bowers" | ${command -v md5 || command -v md5sum}
+ParserError:
+Line |
+   3 |  Write-Output "Jeremy Bowers" | ${command -v md5 || command -v md5sum}
+     |                                   ~
+     | Use `{ instead of { in variable names.
+PS C:\Users\katem\Downloads\clmystery-master\clmystery-master> Write-Output "Jeremy Bowers" | ${command -v md5 || command -v md5sum}
+ParserError:
+Line |
+   1 |  Write-Output "Jeremy Bowers" | ${command -v md5 || command -v md5sum}
+     |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Expressions are only allowed as the first element of a
+     | pipeline.
+PS C:\Users\katem\Downloads\clmystery-master\clmystery-master> echo "Jeremy Bowers" | ${command -v md5 | command -v md5sum}
+ParserError:
+Line |
+   1 |  echo "Jeremy Bowers" | ${command -v md5 | command -v md5sum}
+     |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Expressions are only allowed as the first element of a
+     | pipeline.
+PS C:\Users\katem\Downloads\clmystery-master\clmystery-master> cd mystery
+PS C:\Users\katem\Downloads\clmystery-master\clmystery-master\mystery>  Write-Output "Jeremy Bowers" | ${command -v md5 || command -v md5sum}
+ParserError:
+Line |
+   1 |  … Write-Output "Jeremy Bowers" | ${command -v md5 || command -v md5sum}
+     |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Expressions are only allowed as the first element of a
+     | pipeline.
+PS C:\Users\katem\Downloads\clmystery-master\clmystery-master\mystery>  Write-Output "Jeremy Bowers"
+Jeremy Bowers
+PS C:\Users\katem\Downloads\clmystery-master\clmystery-master\mystery> get-filehash "Jeremy Bowers"
+Get-FileHash: Cannot find path 'C:\Users\katem\Downloads\clmystery-master\clmystery-master\mystery\Jeremy Bowers' because it does not exist.
+PS C:\Users\katem\Downloads\clmystery-master\clmystery-master\mystery> cd ..
+PS C:\Users\katem\Downloads\clmystery-master\clmystery-master> get-filehash "Jeremy Bowers"
+Get-FileHash: Cannot find path 'C:\Users\katem\Downloads\clmystery-master\clmystery-master\Jeremy Bowers' because it does not exist.
+PS C:\Users\katem\Downloads\clmystery-master\clmystery-master> get-filehash write-output "Jeremy Bowers" md5
+Get-FileHash: Cannot validate argument on parameter 'Algorithm'. The argument "Jeremy Bowers" does not belong to the set "SHA1,SHA256,SHA384,SHA512,MD5" specified by the ValidateSet attribute. Supply an argument that is in the set and then try the command again.
+PS C:\Users\katem\Downloads\clmystery-master\clmystery-master> echo "Jeremy Bowers" md5
+Jeremy Bowers
+md5
+PS C:\Users\katem\Downloads\clmystery-master\clmystery-master> echo "Jeremy Bowers" | $command -v md5 || command -vmd5sum
+ParserError:
+Line |
+   1 |  echo "Jeremy Bowers" | $command -v md5 || command -vmd5sum
+     |                                  ~~
+     | Unexpected token '-v' in expression or statement.
+PS C:\Users\katem\Downloads\clmystery-master\clmystery-master> echo "Jeremy Bowers" | $command {-v} md5 || command -vmd5sum
+ParserError:
+Line |
+   1 |  echo "Jeremy Bowers" | $command {-v} md5 || command -vmd5sum
+     |                         ~~~~~~~~
+     | Expressions are only allowed as the first element of a
+     | pipeline.
+PS C:\Users\katem\Downloads\clmystery-master\clmystery-master> echo "Jeremy Bowers" | $command {-v} md5 || command -vmd5sum
+ParserError:
+Line |
+   1 |  echo "Jeremy Bowers" | $command {-v} md5 || command -vmd5sum
+     |                         ~~~~~~~~
+     | Expressions are only allowed as the first element of a
+     | pipeline.
+PS C:\Users\katem\Downloads\clmystery-master\clmystery-master> echo "Jeremy Bowers" | foreach-object (command -v md5 || command -vmd5sum)"
+
+I am pretty sure it it Jeremy Bowers but I cannot generate the number. 
+
+Oh well I will ask on Thursday.
+
