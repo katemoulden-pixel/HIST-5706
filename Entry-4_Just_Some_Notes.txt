@@ -1,0 +1,117 @@
+Readings Oct 15th
+
+I have been really sick this last week so I am taking the easy way out and sharing my reading notes and notes from class. I don't really care if it gives me a lower grade. But I hope it doesn't.
+## Open Notebook History by W. Caleb McDaniel May 22, 2013
+
+2 definitions of "open" 
+1. Active development has ceased and is more or less an "elephant's graveyard" -most historians
+2. In open source software means code that anyone can inspect and change while software is in active development. it encourages collaboration and sharing at all stages of a project's life. 
+Main question- what does it look like to make our notebooks digital and open source from the very *beginning*?
+
+The Promise
+- enables historians to share information *as it happens*
+- allows one to share the "dark data" of failed or small experiments 
+- There are different levels of  similar to Creative Commons licenses.
+Advantages
+- reproducible data
+- errors can be easily spotted or corrected
+- BUT there is a culture of fear among academics. With people looking to find fault. OS allows for more scrutiny 
+- Adv: sharing  because that makes us happy
+- Joy- "The promise of open notebook history is the vast potential joy that could be ours if we chose to share our hoarded wealth."
+- "_The truth is that we often don’t realize the value of what we have until someone else sees it._"
+
+DH Notebooks Promise
+version control - eg. track changes or Wikipedia's history page
+However you can also hide older versions with update overwrites
+ Git also works
+
+An Experiment in Open Notebook History
+
+Concerns of ONH
+- someone scoops and idea
+- what if the publisher won't publish articles whose data and sources are already open and available?
+- copyright law governing sources
+Solutions
+- stepped system of notifications which comunicates how much the notebook or source base is bing shared. 
+
+## Open Science in Archaeology
+By way too many people including Shawn Graham
+
+New norms like data stewardship instead of ownership. Transparency over secrecy. Public involvement over exclusion.
+
+
+5 Themes of open science by Fetcher and Friesike
+" 1. infra structure (i.e., creating tools and services to improve research efficiency), 
+2. the public (i.e., making science accessible for non scientists), 
+3. measurement (i.e., developing alternative metrics to measure the impact of research), 
+4. democracy (i.e., making knowledge freely accessible to all),
+5. and pragmatics (i.e., making collaborative research more efficient)."
+The author's elements of open science:
+open access, open data, and open methods.
+
+6. Open Access
+	1. Pre-prints and publication costs money
+	2. this disadvantages many people
+	3. Publications being easily accessible can be helpful for students and nonacademic collaborators such as local and indigenous communitites.
+7. Open Data
+	1. Open access to datasets
+	2. Many people hope to recoup the costs through publication fees and exclusive access "support me on Patreon"
+	3. BUT there is potential harm
+	4. Think about intellectual property so make sure you negotiate, have legal instruments (CC licenses) or technical solutions (redaction) limiting spacial precision, restricting access, or embargos.
+	5. Address negative impacts prior to opening data to the public
+	6. The advantages include that citations and increase of impact of work for researchers. Easy to research
+8. Open Methods
+	1. methods of data collection, analysis and visualisation that are available for inspection and reuse by the public.can include emperical methods -eg. chemicals used to prepare samples, computation and statistical methods (eg. details of taking raw data and producing statistical models, tests and visualisations.)
+	2. Important for improving [[reproducibility]] of research (reproduce a study) to get the same results by using the same methods and materials (cornerstone of science)
+	3. recommended practices
+		1. transaprent software environment like R or PYthon
+		2. analyse data instead of softweare 
+		3. use version control system
+		4. open source lisences
+		5. archiving on trustworthy repositories
+Why is this relevant?
+- transparent reusable and easily accessible without barriers helps educate folks about software that enables [[reproducibility]] 
+- promotes archaeological ethics - transparency and reproducibility allow you to build on colleagues work, enhance credibility (more thorough peer review), demonstrate chain of reasoning
+- Community best practice facilitate sharing and encourage deposits in trustworthy online resources. Promotes inclusiveness
+
+Notes from Class October 15th 
+Mieke Tutorial
+
+Nodegoat
+
+What is a database
+
+What id nodegoat
+LAB1100 in the Netherlands 
+
+pros
+useful access instructions
+discusses version compatibility
+permalinks 
+screencaps
+
+stumbling 
+blocks
+- lots of clear instructions but did not explain all different functions difficult to replicate
+- skips over some steps like identifiers in object categories
+- problems with visualization tool
+
+Step 1
+- create the project
+
+Management is where you create and edit projects
+model is where you create object types
+data is where you input actual data.
+
+for the books they had three categories.
+publishing
+
+checked boxes name is what is used to identify the object
+nodegoat city is map of world allows for mapping
+
+Nodegoat
+does allow us to use a little bit of data and see what it looks like. You also want to start at the end and figure out what you want
+
+Sketch it out. If I have two pieces of data how do i get them to relate or do I relate them
+
+Linked open data 
