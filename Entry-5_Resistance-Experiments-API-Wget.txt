@@ -1,0 +1,59 @@
+
+Okay so I am going to go into my notes about the readings in a minute but there are a couple of things I have been thinking about that relate to this course. Both of which have been inspired by recent videos from Hank Green.
+
+Firstly it is the idea of joy which I believe is part of serendipity which we have talked about and was mentioned as an outcome of open notebooks. There is a saying "something awaits me in the divine for resisting" which was brought up by Hank and has been bouncing around in my mind a lot. 
+
+I am noticing that I am resisting doing the tutorials. But nothing divine awaits me for my resistance to them. My resistance is actually about my not wanting to "feel stupid" because I will inevitably get frustrated and confused as I work on the tutorial for this week. 
+
+"But Kate! How do you know this will be the future?? You might just be doing an unhealthy thinking habit."
+
+"Yeah I likely am but also I have been confused and frustrated every other tutorial and I don't feel like crying right now."
+
+NB: Below I will try to work on one of the tutorials from this week and include my notes from the readings. Next entry I intend for it to be my notes on working on my tutorial from Duering (I do not know how to add the umlaut so I added the e which is the anglicised way of demonstrating umlauts). 
+
+Back to stream of consciousness writing.
+
+So I have been resistant to doing my work lately. Also I have been having trouble with it mattering to me. I am at the point where I do not know how to make things matter to me in a way that will make me do them when it comes to school. Deadlines do not matter as much because at this point the consequence is less money, or a bad grade, or just kicking a bucket down the road for me to trip on later. So I need to find ways to make this class and what we are doing in it matter to me. 
+
+The experiment matters because I do not want to let Elizabeth down and knowing how to write a collections policy is important. That is why when Elizabeth and I spent yesterday eating soup and finding policies online it felt good. I felt like we could create a database that could be used.  I am looking forward to meeting with Shawn because I want to know how this thing ends. Or what the end goal of our experiment is because right now it is not tangible and I am having trouble caring.
+
+Anyways on to reading notes and trying one of the tutorials
+
+## Introduction to Populating a Website with API Data
+
+What is Application Programming Interface (API)?
+- World Wide Web was for human-to-machine communication.
+- Starts out static but now we want it so human users can interact with human users so it becomes dynamic.
+- We have too much data so we need to work on machine to machine communication. 
+- APIs allow for us have websites communicate to other websites to exchange data like updating a weather forecast on a ski website
+
+Why Use API
+"- More data
+- Related data
+- Interlinking data
+- Remote data
+- Up-to-date data
+- Different types of data (interdisciplinary study)
+- Data with better quality
+- Data not obtainable (by yourself)
+- Data with a low price, or gratis"
+
+Then there is a tutorial in how to make a website. I have opted to do this at a later date when my head is not pounding.
+
+## Theorizing Research Practices We Forgot to Theorize Twenty Years Ago
+- "The search terms I have chosen encode a tacit hypothesis about the literary significance of a symbol, and I feel my hypothesis is confirmed when I get enough hits."
+- Full-text search though is not great
+- WE often rely too heavily on it and full text databases can suck
+- "In hindsight, I underestimated the scope of the problem. It’s true that full-text search can confirm almost any thesis you bring to it, but that may not be its most dangerous feature. The deeper problem is that sorting sources in order of relevance to your query also tends to filter out all the alternative theses you didn’t bring. Search is a form of data mining, but a strangely focused form that only shows you what you already know to expect. This limitation would be a problem in any domain, but it’s particularly acute in historical research, since other periods don’t always organize their knowledge in ways we find intuitive. Our guesses about search terms may well project contemporary associations and occlude unfamiliar patterns of thought."
+- So relevance is as always exclusionary
+- "I haven’t had room here to make a detailed argument about thehuman istic value of quantitative methods.14 But doing that would be almost beside the point, since humanists are already mining large datasets quantitatively every time we use a web browser. The problem is that we are using search algorithms we have never theorized, and arguably using them in a strongly projective way that is at odds with historicism. Although the statistical language of computer science may seem alien toour disciplinary tradition, I think the paradoxical truth is that humanists will need to understand that language in order to design research practices that allow us to work in large collections while remaining true to our own hermeneutic principles"
+
+## Williamson Tutorial
+I did part one of the tutorial but I must have messed up with the text lines and characters function because they all ended up being blank on my CSV file.
+
+## Milligan Tutorial
+
+- Retrieving or mirroring (creating an exact copy of) an entire website. This website might contain historical documents, or it may simply be your own personal website that you want to back up. One command can download the entire site onto your computer.
+- Downloading specific files in a website’s hierarchy (all websites within a certain part of a website, such as every page that is contained within the `/papers/` directory of a website).
+Well I cannot make a directory in the Windows folder so I guess I am hooped??
+
